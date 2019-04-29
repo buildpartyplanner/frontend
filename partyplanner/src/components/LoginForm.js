@@ -1,7 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
-import { login } from "../actions";
+// import { login } from "../actions";
 
 import "./LoginForm.css";
 
@@ -55,11 +55,13 @@ class LoginForm extends React.Component {
   }
 }
 
-const mapStateToProps = ({ isLoggedIn }) => ({
-  isLoggedIn
-});
+export default LoginForm;
 
-export default connect(
-  mapStateToProps,
-  { login }
-)(LoginForm);
+// const mapStateToProps = ({ isLoggedIn }) => ({
+//   isLoggedIn
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   { login }
+// )(LoginForm);
