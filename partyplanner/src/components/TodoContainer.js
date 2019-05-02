@@ -1,15 +1,13 @@
 import React from "react";
 // import sampleData from "../sampleData";
-import Todos from "./Todos";
+import Todo from "./Todo";
 
 const TodoContainer = props => {
-  console.log(props.sampleData);
   return (
     <div>
-      {props.sampleData.map(sample => (
-        <ul>
-          <li>hi</li>
-        </ul>
+      <h1>Things TODO to make this party awesome.</h1>
+      {props.users.todos.map(sample => (
+        <Todo key={sample.item} sample={sample} />
       ))}
     </div>
   );

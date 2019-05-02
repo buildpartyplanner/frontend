@@ -1,11 +1,11 @@
 import React from "react";
 
-const Todo = props => {
+const Items = props => {
   return (
     <div className="todo">
-      <h3>{props.sample.item}</h3>
+      <h3>{props.item.item}</h3>
     </div>
   );
 };
 
-export default Todo;
+export default Items;
