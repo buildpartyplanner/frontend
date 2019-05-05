@@ -1,7 +1,9 @@
 import React from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
+import { Route, PrivateRoute } from "react-router-dom";
+import Master from "./Master";
 
-// import { login } from "../actions";
+import { login } from "../actions";
 
 import "./LoginForm.css";
 
@@ -36,7 +38,7 @@ class LoginForm extends React.Component {
           type="text"
           name="username"
           placeholder="Username"
-          value={this.state.credentials.password}
+          value={this.state.credentials.username}
           onChange={this.handleChanges}
         />
         <input
@@ -50,18 +52,18 @@ class LoginForm extends React.Component {
         <button className="login-button" onClick={this.login}>
           Login
         </button>
+
+        <PrivateRoute path="/user" component={LoginForm} />
       </div>
     );
   }
 }
 
-export default LoginForm;
-
 // const mapStateToProps = ({ isLoggedIn }) => ({
 //   isLoggedIn
 // });
 
-// export default connect(
-//   mapStateToProps,
-//   { login }
-// )(LoginForm);
+export default connect(
+  null,
+  { login }
+)(LoginForm);
