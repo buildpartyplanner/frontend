@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Route, PrivateRoute } from "react-router-dom";
 import Master from "./Master";
+import ProtectedRoute from "./ProtectedRoute";
 
 import { login } from "../actions";
 
@@ -53,15 +53,11 @@ class LoginForm extends React.Component {
           Login
         </button>
 
-        <PrivateRoute path="/user" component={LoginForm} />
+        <ProtectedRoute path="/user" component={Master} />
       </div>
     );
   }
 }
-
-// const mapStateToProps = ({ isLoggedIn }) => ({
-//   isLoggedIn
-// });
 
 export default connect(
   null,

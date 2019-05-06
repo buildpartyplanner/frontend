@@ -6,12 +6,13 @@ import { BrowserRouter as Router } from "react-router-dom";
 import reducer from "./reducers";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import setToken from "./components/token";
+import thunk from "redux-thunk";
+// import setToken from "./components/token";
 
 const store = createStore(
   reducer,
   compose(
-    applyMiddleware(setToken),
+    applyMiddleware(thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
