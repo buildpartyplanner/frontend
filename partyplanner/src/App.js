@@ -3,12 +3,12 @@ import React from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
 
-import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
 
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={LoginForm} />
+      <Route exact path="/" component={RegisterForm} />
     </div>
   );
 }

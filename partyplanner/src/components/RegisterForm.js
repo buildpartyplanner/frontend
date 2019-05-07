@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import ProtectedRoute from "./ProtectedRoute";
+import { Route, Link } from "react-router-dom";
+
+import LoginForm from "./LoginForm";
 
 import { login } from "../actions";
-
-import Master from "./Master";
-
 import "./LoginForm.css";
 
-class LoginForm extends React.Component {
+class RegisterForm extends React.Component {
   state = {
     credentials: {
       username: "",
@@ -34,7 +33,7 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form">
         <h1 className="login-header">Welcome to PartyPlanner</h1>
-        <h2>Enter a username and password to login.</h2>
+        <h2>Enter a username and password to register.</h2>
         <input
           className="login-input"
           type="text"
@@ -52,10 +51,16 @@ class LoginForm extends React.Component {
           onChange={this.handleChanges}
         />
         <button className="login-button" onClick={this.login}>
-          Login
+          Register
         </button>
 
-        <ProtectedRoute path="/user" component={Master} />
+        <h5>
+          If you are already registered click <Link to="/login">HERE</Link> to
+          log in
+        </h5>
+        <Route path="/login" component={LoginForm} />
+
+        {/* <ProtectedRoute path="/login" component={LoginForm} /> */}
       </div>
     );
   }
@@ -64,4 +69,4 @@ class LoginForm extends React.Component {
 export default connect(
   null,
   { login }
-)(LoginForm);
+)(RegisterForm);
